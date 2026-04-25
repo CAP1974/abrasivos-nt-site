@@ -7,12 +7,6 @@ import { SiteHeader } from "@/components/site-header";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { cta, productLines } from "@/content/site";
 
-const heroHighlights = [
-  "Catálogo técnico estruturado",
-  "Imagem real e leitura comercial",
-  "Pedido de orçamento direto"
-];
-
 function renderList(values?: string[]) {
   return values?.join(" • ") ?? "";
 }
@@ -22,44 +16,6 @@ export default function ProdutosPage() {
     <>
       <SiteHeader />
       <main className="pb-12">
-        <section className="container-shell pt-7 sm:pt-8 lg:pt-10">
-          <div className="mx-auto max-w-[1360px] overflow-hidden rounded-[2.3rem] border border-[#d2c2ad] bg-[radial-gradient(circle_at_top_left,rgba(201,154,81,0.14),transparent_30%),radial-gradient(circle_at_88%_14%,rgba(16,32,34,0.08),transparent_24%),linear-gradient(180deg,#fbf6ee_0%,#f0e5d7_50%,#e9ddcb_100%)] px-6 py-5 shadow-[0_34px_120px_rgba(16,32,34,0.12)] sm:px-8 sm:py-6 lg:px-10 lg:py-6 xl:px-12 xl:py-7">
-            <div className="max-w-[760px] self-center">
-              <div className="flex flex-wrap gap-2">
-                {heroHighlights.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-[#baa788] bg-[#f5ede0]/70 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#344446] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-4 text-[13px] font-semibold uppercase tracking-[0.24em] text-sand-800">Produtos</p>
-              <h1 className="mt-3 max-w-[12.2ch] text-[2.05rem] font-semibold tracking-[-0.062em] text-[#1a2527] sm:text-[2.45rem] sm:leading-[0.99] lg:text-[2.72rem] lg:leading-[0.965] xl:text-[2.95rem]">
-                Três linhas apresentadas como catálogo técnico premium, com imagem real e leitura comercial clara.
-              </h1>
-              <p className="mt-4 max-w-[620px] text-[16px] font-medium leading-7 text-[#334345] sm:text-[17px] sm:leading-[1.8]">
-                A página de produtos reúne Frankfurt Plus, Mó 125 mm e Fickert 140 com imagem principal limpa, ficha técnica visual secundária e conteúdo técnico organizado para leitura rápida, profissional e orientada a orçamento.
-              </p>
-              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/orcamento"
-                  className="inline-flex min-h-[54px] min-w-[220px] items-center justify-center rounded-full bg-[#142325] px-7 py-4 text-sm font-semibold text-[#faf3e7] shadow-[0_18px_40px_rgba(16,32,34,0.26)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#0d181a]"
-                >
-                  {cta.primaryQuote}
-                </Link>
-                <Link
-                  href="/empresa"
-                  className="inline-flex min-h-[54px] min-w-[220px] items-center justify-center rounded-full border border-[#b39e81] bg-white/28 px-7 py-4 text-sm font-semibold text-[#223133] shadow-[inset_0_1px_0_rgba(255,255,255,0.52)] transition duration-200 hover:-translate-y-0.5 hover:bg-white/44"
-                >
-                  {cta.secondaryCompany}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <ProductSummarySlider products={productLines} />
 
         <section className="container-shell pt-20 sm:pt-24">
