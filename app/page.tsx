@@ -17,15 +17,15 @@ export default function HomePage() {
           <div className="absolute left-[-6%] top-[12%] h-[24rem] w-[24rem] rounded-full bg-sand-400/10 blur-3xl" />
           <div className="absolute right-[-8%] top-[-6%] h-[28rem] w-[28rem] rounded-full bg-sand-300/12 blur-3xl" />
           <div className="container-shell relative flex min-h-[86vh] items-center py-8 sm:min-h-[88vh] lg:py-10 xl:min-h-[92vh]">
-            <div className="grid w-full gap-6 xl:grid-cols-[1.18fr_0.82fr] xl:items-end">
-              <div className="max-w-[70rem] xl:pr-8">
+            <div className="grid w-full gap-8 xl:grid-cols-[1.38fr_0.62fr] xl:items-end xl:gap-8">
+              <div className="max-w-[78rem] xl:pr-4">
                 <span className="section-kicker border-sand-300/30 bg-sand-300/10 text-sand-200">
                   {company.tagline}
                 </span>
-                <h1 className="mt-5 max-w-[14ch] text-[2.9rem] font-semibold tracking-[-0.055em] leading-[0.94] sm:text-[4.2rem] lg:text-[6rem] lg:leading-[0.9] xl:text-[6.65rem]">
+                <h1 className="mt-5 max-w-[16ch] text-[2.9rem] font-semibold tracking-[-0.055em] leading-[0.94] sm:max-w-[13ch] sm:text-[4.2rem] lg:max-w-[12ch] lg:text-[6rem] lg:leading-[0.9] xl:max-w-[11.5ch] xl:text-[6.2rem]">
                   {company.heroTitle}
                 </h1>
-                <p className="mt-6 max-w-[46rem] text-[1.02rem] leading-8 text-white/78 sm:text-[1.08rem] lg:text-[1.16rem]">
+                <p className="mt-6 max-w-[52rem] text-[1.02rem] leading-8 text-white/78 sm:text-[1.08rem] lg:text-[1.16rem]">
                   {company.heroDescription}
                 </p>
 
@@ -38,7 +38,7 @@ export default function HomePage() {
                   </Link>
                 </div>
 
-                <div className="mt-9 grid gap-3 sm:grid-cols-3">
+                <div className="mt-9 grid gap-3 sm:grid-cols-3 xl:max-w-[60rem]">
                   {company.trustHighlights.slice(0, 3).map((item, index) => (
                     <div key={item} className={index === 0 ? "rounded-[1.45rem] border border-sand-300/22 bg-sand-300/10 px-4 py-4 text-sm leading-6 text-white/90" : "rounded-[1.45rem] border border-white/10 bg-white/[0.04] px-4 py-4 text-sm leading-6 text-white/78"}>
                       {item}
@@ -47,7 +47,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="grid gap-4 xl:gap-5">
+              <div className="grid gap-4 self-end xl:gap-4">
                 <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
                   <div className="rounded-[1.8rem] border border-white/10 bg-white/[0.05] px-5 py-5 text-sm leading-7 text-white/78">
                     Orientação por aplicação, material e máquina para tornar o pedido de orçamento mais qualificado.
