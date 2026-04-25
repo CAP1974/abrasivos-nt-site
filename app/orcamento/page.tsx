@@ -1,5 +1,4 @@
 ﻿import Link from "next/link";
-import { QuoteCta } from "@/components/quote-cta";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppBusinessIcon } from "@/components/whatsapp-business-icon";
@@ -164,13 +163,6 @@ export default function OrcamentoPage() {
           </div>
         </section>
 
-        <section className="container-shell pt-16 sm:pt-18 lg:pt-22 xl:pt-24">
-          <QuoteCta
-            eyebrow="Contacto comercial"
-            title="Ainda não sabe qual é a linha mais adequada?"
-            description="O pedido pode começar pela aplicação, pelo material ou pela máquina. A página foi desenhada para apoiar esse processo com clareza técnica e resposta comercial objetiva."
-          />
-        </section>
       </main>
       <SiteFooter />
       <WhatsAppButton />
