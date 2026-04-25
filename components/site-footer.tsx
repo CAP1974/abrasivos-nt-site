@@ -19,7 +19,7 @@ export function SiteFooter() {
                   <p className="mt-1 text-[11px] font-medium text-white/68 sm:text-xs">{company.legalName}</p>
                 </div>
               </div>
-              <p className="mt-6 max-w-xl text-[0.99rem] leading-8 text-white/82">{footerContent.summary}</p>
+              <p className="mt-6 max-w-[32rem] text-[0.96rem] leading-7 text-white/80 sm:text-[0.99rem] sm:leading-8">{footerContent.summary}</p>
             </div>
 
             <div>

@@ -197,7 +197,7 @@ export const company = {
 
 export const footerContent = {
   summary:
-    "Abrasivos técnicos para mármore, granito e pedra, com foco em polimento, acabamento e apoio comercial especializado.",
+    "Abrasivos cerâmicos para todos os tipos de pedras naturais e artificiais, com foco numa produção personalizada de acordo com a necessidade específica de cada cliente e apoio técnico e comercial especializado.",
   contactNote:
     "Para informações comerciais, compatibilidades e pedidos de orçamento, entre em contacto com a nossa equipa."
 };
