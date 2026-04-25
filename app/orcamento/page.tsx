@@ -110,7 +110,7 @@ export default function OrcamentoPage() {
                   Fale connosco por email, telefone ou WhatsApp.
                 </h2>
                 <p className="mt-4 max-w-[620px] text-[16px] leading-8 text-steel-900/88 sm:text-[17px]">
-                  A página foi simplificada para tornar o contacto mais direto, mais claro e mais fiável. Pode enviar o seu pedido por email ou iniciar conversa imediata por WhatsApp com enquadramento comercial e técnico.
+                  Pode enviar o seu pedido por email ou iniciar conversa imediata por WhatsApp com enquadramento comercial e técnico.
                 </p>
               </div>
 
