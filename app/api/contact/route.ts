@@ -2,9 +2,10 @@
 import { NextResponse } from "next/server";
 import { contact } from "@/content/site";
 
-const requiredFields = ["name", "company", "email", "phone", "line", "application", "compatibility", "message"] as const;
+const requiredFields = ["name", "company", "email", "phone", "message"] as const;
+const optionalFields = ["line", "application", "compatibility"] as const;
 
-type ContactPayload = Record<(typeof requiredFields)[number], string>;
+type ContactPayload = Record<((typeof requiredFields)[number] | (typeof optionalFields)[number]), string>;
 
 function getMissingFields(payload: Partial<ContactPayload>) {
   return requiredFields.filter((field) => !payload[field]?.trim());
@@ -49,15 +50,15 @@ export async function POST(request: Request) {
     });
 
     const data = payload as ContactPayload;
-    const subject = `Pedido de informação - ${data.line}`;
+    const subject = data.line?.trim() ? `Pedido de informação - ${data.line}` : "Pedido de informação - Abrasivos NT";
     const text = [
       `Nome: ${data.name}`,
       `Empresa: ${data.company}`,
       `Email: ${data.email}`,
       `Telefone: ${data.phone}`,
-      `Linha de produto: ${data.line}`,
-      `Aplicação principal: ${data.application}`,
-      `Material e compatibilidade: ${data.compatibility}`,
+      `Linha de produto: ${data.line || "Não indicada"}`,
+      `Aplicação principal: ${data.application || "Não indicada"}`,
+      `Material e compatibilidade: ${data.compatibility || "Não indicada"}`,
       "",
       "Mensagem:",
       data.message
@@ -72,9 +73,9 @@ export async function POST(request: Request) {
             <tr><td style="padding:8px 0;font-weight:700;">Empresa</td><td style="padding:8px 0;">${data.company}</td></tr>
             <tr><td style="padding:8px 0;font-weight:700;">Email</td><td style="padding:8px 0;">${data.email}</td></tr>
             <tr><td style="padding:8px 0;font-weight:700;">Telefone</td><td style="padding:8px 0;">${data.phone}</td></tr>
-            <tr><td style="padding:8px 0;font-weight:700;">Linha de produto</td><td style="padding:8px 0;">${data.line}</td></tr>
-            <tr><td style="padding:8px 0;font-weight:700;">Aplicação principal</td><td style="padding:8px 0;">${data.application}</td></tr>
-            <tr><td style="padding:8px 0;font-weight:700;">Material e compatibilidade</td><td style="padding:8px 0;">${data.compatibility}</td></tr>
+            <tr><td style="padding:8px 0;font-weight:700;">Linha de produto</td><td style="padding:8px 0;">${data.line || "Não indicada"}</td></tr>
+            <tr><td style="padding:8px 0;font-weight:700;">Aplicação principal</td><td style="padding:8px 0;">${data.application || "Não indicada"}</td></tr>
+            <tr><td style="padding:8px 0;font-weight:700;">Material e compatibilidade</td><td style="padding:8px 0;">${data.compatibility || "Não indicada"}</td></tr>
           </tbody>
         </table>
         <div style="margin-top:24px;border-top:1px solid #d7ccb9;padding-top:16px;">

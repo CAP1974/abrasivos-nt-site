@@ -204,14 +204,17 @@ export default function EmpresaPage() {
                   description="Depois de uma fase extensa de consolidação profissional em diferentes mercados, iniciou-se uma nova etapa com um objetivo claro: criar uma operação própria, com capacidade real para desenvolver processos, formulações e soluções de fabrico diferenciadas."
                 />
                 <p className="mt-3 text-[16px] leading-8 text-steel-900/88 sm:text-[17px]">
-                  Em 2014 arrancou uma fase centrada no desenvolvimento integral dos processos de fabricação. Em 2019, o projeto regressou à Europa e, em dezembro desse ano, foi constituída a Abrasives NT Europe Lda.
+                  Em 2014 arrancou uma fase inicial do projeto no Brasil para o desenvolvimento dos processos de fabrico de abrasivos cerâmicos. Em 2019, foi constituído um novo polo de produção em Portugal para dar continuidade ao desenvolvimento e à melhoria dos processos e produtos, com foco no mercado europeu. Em 2024, foi lançado o novo abrasivo Frankfurt Plus, uma inovação orientada para melhores resultados, maior produção diária e uma redução significativa dos custos energéticos.
                 </p>
-                <div className="mt-4 grid gap-2 sm:max-w-[760px] sm:grid-cols-2">
+                <div className="mt-4 grid gap-2 sm:max-w-[760px] sm:grid-cols-3">
                   <div className="rounded-[0.9rem] border border-[#e5d8c5] bg-white px-3.5 py-2.5 text-[13px] font-medium leading-5 text-steel-950 shadow-[0_8px_18px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.8)]">
-                    2014: desenvolvimento integral de processos de fabricação.
+                    2014: arranque do projeto no Brasil para desenvolver processos de fabrico de abrasivos cerâmicos.
                   </div>
                   <div className="rounded-[0.9rem] border border-[#e5d8c5] bg-white px-3.5 py-2.5 text-[13px] font-medium leading-5 text-steel-950 shadow-[0_8px_18px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.8)]">
-                    2019: regresso à Europa e constituição da Abrasives NT Europe Lda.
+                    2019: novo polo de produção em Portugal para desenvolver processos e produtos com foco europeu.
+                  </div>
+                  <div className="rounded-[0.9rem] border border-[#e5d8c5] bg-white px-3.5 py-2.5 text-[13px] font-medium leading-5 text-steel-950 shadow-[0_8px_18px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.8)]">
+                    2024: lançamento do Frankfurt Plus para elevar a produção diária e reduzir custos energéticos.
                   </div>
                 </div>
               </div>

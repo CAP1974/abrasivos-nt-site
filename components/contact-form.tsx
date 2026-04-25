@@ -200,7 +200,7 @@ export function ContactForm({
               {feedback.message}
             </div>
           ) : null}
-          <button type="submit" disabled={isSubmitting} className="inline-flex min-w-[240px] justify-center rounded-full bg-steel-950 px-7 py-4 text-sm font-semibold text-white shadow-[0_18px_36px_rgba(16,32,34,0.22)] transition duration-200 hover:-translate-y-0.5 hover:bg-steel-800 disabled:cursor-not-allowed disabled:opacity-70">
+          <button type="submit" disabled={isSubmitting} className="inline-flex min-h-[56px] min-w-[240px] justify-center rounded-full bg-[#1f2c2f] px-7 py-4 text-sm font-semibold text-[#fdf7ee] shadow-[0_18px_36px_rgba(16,32,34,0.22)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#273639] disabled:cursor-not-allowed disabled:opacity-70">
             {isSubmitting ? "A enviar..." : submitLabel}
           </button>
         </form>
