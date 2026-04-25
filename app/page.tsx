@@ -48,12 +48,6 @@ export default function HomePage() {
               </div>
 
               <div className="grid gap-4 xl:gap-5">
-                <div className="rounded-[2.2rem] border border-white/10 bg-black/24 p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:p-8 lg:p-9">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-sand-200">Posicionamento</p>
-                  <p className="mt-4 text-[2rem] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-[2.4rem]">
-                    Catálogo comercial claro, leitura técnica objetiva e presença institucional forte para o setor da pedra.
-                  </p>
-                </div>
                 <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
                   <div className="rounded-[1.8rem] border border-white/10 bg-white/[0.05] px-5 py-5 text-sm leading-7 text-white/78">
                     Orientação por aplicação, material e máquina para tornar o pedido de orçamento mais qualificado.
