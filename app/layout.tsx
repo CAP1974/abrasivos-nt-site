@@ -1,35 +1,37 @@
 import type { Metadata } from "next";
+import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  variable: "--font-barlow",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.grupont.pt"),
-  title: {
-    default: "Abrasivos NT | Abrasivos técnicos para pedra",
-    template: "%s | Abrasivos NT"
-  },
+  title: "Abrasivos NT — Abrasivos Cerâmicos para Pedra Natural e Artificial",
   description:
-    "Abrasivos técnicos para mármore, granito e acabamento de pedra. Catálogo comercial B2B com leitura clara, foco profissional e pedido de orçamento simples.",
-  keywords: [
-    "abrasivos para pedra",
-    "abrasivos para mármore",
-    "abrasivos para granito",
-    "frankfurt plus",
-    "fickert",
-    "mó 125 mm"
-  ],
-  openGraph: {
-    title: "Abrasivos NT | Abrasivos técnicos para pedra",
-    description:
-      "Marca especializada em abrasivos para pedra com apresentação técnica, catálogo profissional e contacto comercial direto.",
-    type: "website",
-    locale: "pt_PT"
-  }
+    "A Abrasivos NT fornece soluções abrasivas para polimento e acabamento no setor da pedra, com foco em clareza técnica, apoio comercial direto e escolha adequada para cada aplicação.",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="pt-PT">
-      <body>{children}</body>
+    <html lang="pt" className={`${barlowCondensed.variable} ${inter.variable}`}>
+      <body style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
+        {children}
+      </body>
     </html>
   );
 }
