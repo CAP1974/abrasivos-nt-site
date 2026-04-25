@@ -6,9 +6,14 @@ export function WhatsAppButton() {
     return null;
   }
 
+  const whatsappNumber = contact.whatsapp.replace(/\D/g, "");
+  const whatsappMessage = encodeURIComponent(
+    "Olá, obrigado pelo seu contacto. Estamos disponíveis para ajudar com a informação comercial ou técnica de que necessita."
+  );
+
   return (
     <Link
-      href={`https://wa.me/${contact.whatsapp.replace(/\D/g, "")}`}
+      href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
       target="_blank"
       rel="noreferrer"
       aria-label="Falar por WhatsApp"
