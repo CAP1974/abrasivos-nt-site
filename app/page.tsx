@@ -17,12 +17,9 @@ export default function HomePage() {
           <div className="absolute left-[-6%] top-[12%] h-[24rem] w-[24rem] rounded-full bg-sand-400/10 blur-3xl" />
           <div className="absolute right-[-8%] top-[-6%] h-[28rem] w-[28rem] rounded-full bg-sand-300/12 blur-3xl" />
           <div className="container-shell relative flex min-h-[86vh] items-center py-8 sm:min-h-[88vh] lg:py-10 xl:min-h-[92vh]">
-            <div className="grid w-full gap-8 xl:grid-cols-[1.58fr_0.42fr] xl:items-end xl:gap-6">
-              <div className="max-w-none xl:pr-2">
-                <span className="section-kicker border-sand-300/30 bg-sand-300/10 text-sand-200">
-                  {company.tagline}
-                </span>
-                <h1 className="mt-5 max-w-[16ch] text-[2.9rem] font-semibold tracking-[-0.055em] leading-[0.94] sm:max-w-[13ch] sm:text-[4.2rem] lg:max-w-[11.5ch] lg:text-[6rem] lg:leading-[0.9] xl:max-w-[12.6ch] xl:text-[5.8rem]">
+            <div className="w-full">
+              <div className="max-w-none">
+                <h1 className="max-w-[16ch] text-[2.9rem] font-semibold leading-[0.94] tracking-[-0.055em] sm:max-w-[13ch] sm:text-[4.2rem] lg:max-w-[11.5ch] lg:text-[6rem] lg:leading-[0.9] xl:max-w-[12.6ch] xl:text-[5.8rem]">
                   {company.heroTitle}
                 </h1>
                 <p className="mt-6 max-w-[60rem] text-[1.02rem] leading-8 text-white/78 sm:text-[1.08rem] lg:text-[1.16rem]">
@@ -36,25 +33,6 @@ export default function HomePage() {
                   <Link href="/orcamento" className="inline-flex min-w-[230px] justify-center rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-sm font-semibold text-white transition duration-200 hover:bg-white/[0.08]">
                     {cta.primaryQuote}
                   </Link>
-                </div>
-
-                <div className="mt-9 grid gap-3 sm:grid-cols-3 xl:max-w-[68rem]">
-                  {company.trustHighlights.slice(0, 3).map((item, index) => (
-                    <div key={item} className={index === 0 ? "rounded-[1.45rem] border border-sand-300/22 bg-sand-300/10 px-4 py-4 text-sm leading-6 text-white/90" : "rounded-[1.45rem] border border-white/10 bg-white/[0.04] px-4 py-4 text-sm leading-6 text-white/78"}>
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid gap-4 self-end xl:gap-4 xl:pl-2">
-                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
-                  <div className="rounded-[1.8rem] border border-white/10 bg-white/[0.05] px-5 py-5 text-sm leading-7 text-white/78">
-                    Orientação por aplicação, material e máquina para tornar o pedido de orçamento mais qualificado.
-                  </div>
-                  <div className="rounded-[1.8rem] border border-sand-300/20 bg-sand-300/10 px-5 py-5 text-sm leading-7 text-white/86">
-                    Comunicação comercial direta, navegação simples e foco em decisão técnica com rapidez.
-                  </div>
                 </div>
               </div>
             </div>
