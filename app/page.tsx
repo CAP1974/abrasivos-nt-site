@@ -22,7 +22,7 @@ export default function HomePage() {
                 <span className="section-kicker border-sand-300/30 bg-sand-300/10 text-sand-200">
                   {company.tagline}
                 </span>
-                <h1 className="mt-5 max-w-[13ch] text-[3.5rem] font-semibold tracking-[-0.055em] sm:text-[4.8rem] lg:text-[6rem] lg:leading-[0.9] xl:text-[6.65rem]">
+                <h1 className="mt-5 max-w-[14ch] text-[2.9rem] font-semibold tracking-[-0.055em] leading-[0.94] sm:text-[4.2rem] lg:text-[6rem] lg:leading-[0.9] xl:text-[6.65rem]">
                   {company.heroTitle}
                 </h1>
                 <p className="mt-6 max-w-[46rem] text-[1.02rem] leading-8 text-white/78 sm:text-[1.08rem] lg:text-[1.16rem]">

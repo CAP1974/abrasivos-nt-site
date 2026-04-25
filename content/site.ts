@@ -174,7 +174,7 @@ export const company = {
   legalName: "Abrasives NT Europe Lda",
   brandName: "Abrasivos NT",
   tagline: "Abrasivos Resinoides para todos os tipos de pedras naturais ou artificiais.",
-  heroTitle: "Abrasivos técnicos para mármore, granito e pedras artificiais",
+  heroTitle: "Abrasivos Ceramicos para todos os tipos de pedras naturais e artificiais.",
   heroDescription:
     "A Abrasivos NT fornece soluções abrasivas para polimento e acabamento no setor da pedra, com foco em clareza técnica, apoio comercial direto e escolha adequada para cada aplicação.",
   about:
