@@ -1,377 +1,134 @@
-﻿import Link from "next/link";
-import { SiteFooter } from "@/components/site-footer";
+import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
-import { company } from "@/content/site";
-
-type Item = {
-  title: string;
-  text: string;
-};
-
-const heroHighlights = [
-  "Processo produtivo próprio",
-  "Mais de 26 anos de experiência",
-  "Expansão industrial"
-];
-
-const strategicHighlights = [
-  "Processo produtivo próprio",
-  "Mais de 26 anos de experiência",
-  "Flexibilidade de formulação",
-  "Fase de expansão internacional"
-];
-
-const processPoints = [
-  "Alta capacidade produtiva e custos controlados",
-  "Grande flexibilidade operacional e maior autonomia industrial",
-  "Adaptação rápida a diferentes necessidades do mercado"
-];
-
-const valueCards: Item[] = [
-  {
-    title: "Experiência acumulada",
-    text: "Mais de 26 anos de percurso profissional e conhecimento aprofundado do setor dos abrasivos."
-  },
-  {
-    title: "Processo próprio",
-    text: "Sistema de produção desenvolvido internamente para eficiência, flexibilidade e escalabilidade."
-  },
-  {
-    title: "Capacidade de adaptação",
-    text: "Formulações ajustáveis ao cliente, ao tipo de pedra e ao contexto técnico de aplicação."
-  },
-  {
-    title: "Fase de expansão",
-    text: "Base produtiva consolidada e foco atual no crescimento da capacidade industrial e da presença internacional."
-  }
-];
-
-const expansionPoints = [
-  "Expansão da capacidade da fábrica",
-  "Crescimento comercial estruturado",
-  "Entrada em novos mercados",
-  "Reforço da presença internacional",
-  "Valorização contínua da marca"
-];
-
-const principles: Item[] = [
-  {
-    title: "Especialização",
-    text: "Desenvolvemos soluções orientadas para contextos reais de aplicação."
-  },
-  {
-    title: "Consistência",
-    text: "Valorizamos estabilidade de produção e confiança no desempenho."
-  },
-  {
-    title: "Eficiência",
-    text: "Acreditamos numa indústria mais inteligente, com maior controlo e competitividade."
-  },
-  {
-    title: "Flexibilidade",
-    text: "Adaptamos formulações e resposta técnica às necessidades reais do mercado."
-  },
-  {
-    title: "Crescimento sustentável",
-    text: "Trabalhamos para crescer com base sólida, visão estratégica e estrutura preparada para o futuro."
-  }
-];
-
-function SectionIntro({
-  eyebrow,
-  title,
-  description,
-  className = ""
-}: {
-  eyebrow?: string;
-  title: string;
-  description?: string;
-  className?: string;
-}) {
-  return (
-    <div className={`max-w-[760px] ${className}`.trim()}>
-      {eyebrow ? (
-        <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-sand-700">{eyebrow}</p>
-      ) : null}
-      <h2 className="mt-3 text-[2rem] font-semibold tracking-[-0.054em] text-steel-950 sm:text-[2.2rem] lg:text-[2.42rem] lg:leading-[0.98] xl:text-[2.54rem]">
-        {title}
-      </h2>
-      {description ? <p className="mt-4 text-[16px] leading-8 text-steel-900/90 sm:text-[17px]">{description}</p> : null}
-    </div>
-  );
-}
+import { company, contact } from "@/content/site";
 
 export default function EmpresaPage() {
   return (
     <>
       <SiteHeader />
-      <main className="pb-16 sm:pb-20">
-        <section className="container-shell pt-6 sm:pt-8 lg:pt-10">
-          <div className="mx-auto max-w-[1360px] overflow-hidden rounded-[2.3rem] border border-[#d2c2ad] bg-[radial-gradient(circle_at_top_left,rgba(201,154,81,0.14),transparent_30%),radial-gradient(circle_at_88%_14%,rgba(16,32,34,0.08),transparent_24%),linear-gradient(180deg,#fbf6ee_0%,#f0e5d7_50%,#e9ddcb_100%)] px-6 py-5 shadow-[0_34px_120px_rgba(16,32,34,0.12)] sm:px-8 sm:py-6 lg:px-10 lg:py-6 xl:grid xl:grid-cols-[0.96fr_1.04fr] xl:gap-10 xl:px-12 xl:py-7">
-            <div className="max-w-[660px] self-center">
-              <div className="flex flex-wrap gap-2">
-                {heroHighlights.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-[#baa788] bg-[#f5ede0]/70 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#344446] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-4 text-[13px] font-semibold uppercase tracking-[0.24em] text-sand-800">Empresa</p>
-              <h1 className="mt-3 max-w-[12.15ch] text-[2.05rem] font-semibold tracking-[-0.062em] text-[#1a2527] sm:text-[2.45rem] sm:leading-[0.99] lg:text-[2.72rem] lg:leading-[0.965] xl:text-[2.95rem]">
-                Experiência real do setor, processo produtivo próprio e visão industrial para crescer com consistência.
-              </h1>
-              <p className="mt-4 max-w-[620px] text-[16px] font-medium leading-7 text-[#334345] sm:text-[17px] sm:leading-[1.8]">
-                A Abrasivos NT, marca da {company.legalName}, desenvolve e produz abrasivos técnicos para o setor da pedra com foco em qualidade competitiva, flexibilidade de formulação, eficiência produtiva e apoio comercial direto.
-              </p>
-              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/produtos"
-                  className="inline-flex min-h-[54px] min-w-[220px] items-center justify-center rounded-full bg-[#142325] px-7 py-4 text-sm font-semibold text-[#faf3e7] shadow-[0_18px_40px_rgba(16,32,34,0.26)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#0d181a]"
-                >
-                  Conhecer os produtos
-                </Link>
-                <Link
-                  href="/orcamento"
-                  className="inline-flex min-h-[54px] min-w-[220px] items-center justify-center rounded-full border border-[#b39e81] bg-white/28 px-7 py-4 text-sm font-semibold text-[#223133] shadow-[inset_0_1px_0_rgba(255,255,255,0.52)] transition duration-200 hover:-translate-y-0.5 hover:bg-white/44"
-                >
-                  Pedir orçamento
-                </Link>
-              </div>
+      <main>
+
+        {/* PAGE HEADER */}
+        <section className="border-b border-white/10" style={{ background: "var(--deep)", color: "#fff", padding: "clamp(48px,7vw,96px) 0" }}>
+          <div className="container-shell">
+            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-white/40 mb-5">
+              <Link href="/" className="hover:text-white/70 transition">Home</Link>
+              <span>/</span>
+              <span style={{ color: "var(--sand)" }}>Empresa</span>
             </div>
-
-            <div className="mt-7 xl:mt-0 xl:self-stretch">
-              <div className="h-full rounded-[2rem] border border-white/8 surface-dark px-6 py-6 text-white shadow-[0_26px_72px_rgba(5,9,10,0.22),inset_0_1px_0_rgba(255,255,255,0.06)] sm:px-8 sm:py-7 lg:px-9 lg:py-8">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-sand-100">Base estratégica</p>
-                <h2 className="mt-4 max-w-[17ch] text-[1.62rem] font-semibold tracking-[-0.045em] text-white sm:text-[1.82rem] lg:text-[1.95rem] lg:leading-[1.02]">
-                  Estrutura construída para eficiência, adaptação e crescimento.
-                </h2>
-                <div className="mt-6 grid gap-3.5">
-                  {strategicHighlights.map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-3 rounded-[1.2rem] border border-white/10 bg-white/[0.05] px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
-                    >
-                      <span className="h-2.5 w-2.5 rounded-full bg-sand-400 shadow-[0_0_0_4px_rgba(201,154,81,0.15)]" />
-                      <p className="text-[15px] font-medium leading-6 text-white/92">{item}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-5 rounded-[1.35rem] border border-white/10 bg-white/[0.04] px-5 py-5">
-                  <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-sand-100">Leitura institucional</p>
-                  <p className="mt-3 text-[15px] leading-7 text-white/84">
-                    A operação industrial foi desenhada para combinar capacidade, controlo e autonomia produtiva com visão de longo prazo.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="container-shell pt-9 sm:pt-10 lg:pt-11 xl:pt-12">
-          <div className="mx-auto max-w-[1280px]">
-            <div className="grid max-w-[1068px] gap-4 lg:grid-cols-[minmax(0,820px)_248px] lg:items-start xl:gap-5">
-              <div className="min-w-0 pl-0">
-                <SectionIntro
-                  eyebrow="Quem somos"
-                  title="Conhecimento do mercado, experiência acumulada e visão construída no terreno"
-                  description="A Abrasivos NT resulta de um percurso sólido no setor dos abrasivos, construído sobre experiência prática, leitura técnica do mercado e contacto direto com diferentes realidades de aplicação. Ao longo de mais de duas décadas, foi consolidada uma visão clara sobre o que cria valor neste setor: consistência, adaptação, capacidade produtiva e resposta comercial séria."
-                  className="max-w-none pl-0"
-                />
-              </div>
-              <aside className="w-full rounded-[1.55rem] border border-[#ddd0bd] bg-[#f8f1e5] px-4 py-3 shadow-[0_10px_24px_rgba(16,32,34,0.045),inset_0_1px_0_rgba(255,255,255,0.75)] lg:mt-0.5 lg:w-[248px] lg:justify-self-start">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.2em] text-sand-700">Experiência</p>
-                <p className="mt-2 text-[2.05rem] font-semibold tracking-[-0.055em] text-steel-950">+26 anos</p>
-                <div className="mt-2 grid gap-2 text-[13px] leading-5 text-steel-900/84">
-                  <div className="rounded-[0.85rem] border border-[#e5d8c5] bg-white px-3.5 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">Percurso iniciado em 2000.</div>
-                  <div className="rounded-[0.85rem] border border-[#e5d8c5] bg-white px-3.5 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">Atividade aprofundada no setor desde 2003.</div>
-                  <div className="rounded-[0.85rem] border border-[#e5d8c5] bg-white px-3.5 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">Conhecimento consolidado sobre aplicação, mercado e realidade industrial.</div>
-                </div>
-              </aside>
-            </div>
-          </div>
-        </section>
-
-        <section className="container-shell pt-7 sm:pt-8 lg:pt-9 xl:pt-10">
-            <div className="mx-auto max-w-[1280px]">
-              <div className="max-w-[780px]">
-                <SectionIntro
-                  eyebrow="Estrutura própria"
-                  title="De uma longa experiência de mercado para uma estrutura própria de produção"
-                  description="Depois de uma fase extensa de consolidação profissional em diferentes mercados, iniciou-se uma nova etapa com um objetivo claro: criar uma operação própria, com capacidade real para desenvolver processos, formulações e soluções de fabrico diferenciadas."
-                />
-                <p className="mt-3 text-[16px] leading-8 text-steel-900/88 sm:text-[17px]">
-                  Em 2014 arrancou uma fase inicial do projeto no Brasil para o desenvolvimento dos processos de fabrico de abrasivos cerâmicos. Em 2019, foi constituído um novo polo de produção em Portugal para dar continuidade ao desenvolvimento e à melhoria dos processos e produtos, com foco no mercado europeu. Em 2024, foi lançado o novo abrasivo Frankfurt Plus, uma inovação orientada para melhores resultados, maior produção diária e uma redução significativa dos custos energéticos.
-                </p>
-                <div className="mt-4 grid gap-2 sm:max-w-[760px] sm:grid-cols-3">
-                  <div className="rounded-[0.9rem] border border-[#e5d8c5] bg-white px-3.5 py-2.5 text-[13px] font-medium leading-5 text-steel-950 shadow-[0_8px_18px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.8)]">
-                    2014: arranque do projeto no Brasil para desenvolver processos de fabrico de abrasivos cerâmicos.
-                  </div>
-                  <div className="rounded-[0.9rem] border border-[#e5d8c5] bg-white px-3.5 py-2.5 text-[13px] font-medium leading-5 text-steel-950 shadow-[0_8px_18px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.8)]">
-                    2019: novo polo de produção em Portugal para desenvolver processos e produtos com foco europeu.
-                  </div>
-                  <div className="rounded-[0.9rem] border border-[#e5d8c5] bg-white px-3.5 py-2.5 text-[13px] font-medium leading-5 text-steel-950 shadow-[0_8px_18px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.8)]">
-                    2024: lançamento do Frankfurt Plus para elevar a produção diária e reduzir custos energéticos.
-                  </div>
-                </div>
-              </div>
-          </div>
-        </section>
-
-        <section className="container-shell pt-14 sm:pt-16 lg:pt-20 xl:pt-24">
-          <div className="mx-auto max-w-[1360px] rounded-[2.15rem] border border-[#d8cab3] bg-[linear-gradient(180deg,#fbf6ed_0%,#f3eadf_100%)] px-6 py-8 shadow-[0_26px_78px_rgba(16,32,34,0.08)] sm:px-8 sm:py-10 lg:px-10 lg:py-11">
-            <SectionIntro
-              eyebrow="Processo produtivo"
-              title="Processo produtivo exclusivo e diferenciação industrial real"
-              description="Um dos principais fatores distintivos da Abrasivos NT é o desenvolvimento de um modo de fabricação próprio, criado para combinar eficiência, flexibilidade e capacidade de resposta."
-            />
-            <div className="mt-8 grid gap-6 lg:grid-cols-[0.96fr_1.04fr] lg:items-start">
-              <div className="max-w-[760px]">
-                <p className="text-[16px] leading-8 text-steel-900/88 sm:text-[17px]">
-                  Ao longo dos últimos anos, foi estruturado um modelo de produção orientado para alta capacidade, custos controlados, maior autonomia industrial e adaptação rápida a diferentes exigências do mercado.
-                </p>
-                <div className="mt-5 rounded-[1.75rem] border border-[#dfd1bc] bg-white px-6 py-6 shadow-[0_12px_32px_rgba(16,32,34,0.05)]">
-                  <p className="text-[13px] font-semibold uppercase tracking-[0.2em] text-sand-700">Bloco de apoio</p>
-                  <p className="mt-4 text-[16px] leading-8 text-steel-900/86 sm:text-[17px]">
-                    Este processo permite produzir com maior controlo, maior consistência e melhor capacidade de adaptação.
-                  </p>
-                </div>
-              </div>
-              <div className="grid gap-3 sm:grid-cols-3">
-                {processPoints.map((point) => (
-                  <div
-                    key={point}
-                    className="rounded-[1.45rem] border border-[#dfd1bc] bg-white px-5 py-5 text-[15px] font-semibold leading-7 text-steel-950 shadow-[0_10px_24px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.9)]"
-                  >
-                    {point}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="container-shell pt-14 sm:pt-16 lg:pt-20 xl:pt-24">
-          <div className="mx-auto grid max-w-[1280px] gap-5 md:grid-cols-2">
-            {valueCards.map((card) => (
-              <article
-                key={card.title}
-                className="panel-strong min-h-[192px] border-[color:var(--border-strong)] px-6 py-6 shadow-[0_14px_34px_rgba(16,32,34,0.05)] sm:px-7 sm:py-7 lg:px-8 lg:py-8"
-              >
-                <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-sand-700">Valor</p>
-                <h3 className="mt-3 text-[1.52rem] font-semibold tracking-[-0.046em] text-steel-950 sm:text-[1.62rem]">
-                  {card.title}
-                </h3>
-                <p className="mt-4 text-[16px] leading-8 text-steel-900/84 sm:text-[16.5px]">{card.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="container-shell pt-14 sm:pt-16 lg:pt-20 xl:pt-24">
-          <div className="mx-auto max-w-[1280px] rounded-[2rem] border border-[#ddd0bd] bg-[#f8f1e6] px-6 py-7 shadow-[0_18px_46px_rgba(16,32,34,0.06)] sm:px-8 sm:py-8 lg:px-10 lg:py-10">
-            <SectionIntro
-              title="Flexibilidade técnica e forte relação preço/qualidade"
-              description="A proposta de valor da Abrasivos NT assenta na combinação entre desempenho técnico, eficiência produtiva e capacidade de adaptação. Sempre que necessário, a empresa pode ajustar formulações ao tipo de cliente, ao tipo de pedra ou ao contexto de aplicação."
-            />
-            <p className="mt-5 max-w-[780px] text-[16px] leading-8 text-steel-900/88 sm:text-[17px]">
-              Esta flexibilidade permite entregar uma solução com forte relação preço/qualidade, suportada por controlo de processo, experiência real do setor e foco no resultado final para o cliente.
+            <h1 style={{ fontFamily: "var(--font-barlow),sans-serif", fontSize: "clamp(3rem,7vw,6.5rem)", fontWeight: 800, letterSpacing: "-0.02em", textTransform: "uppercase", lineHeight: 0.93, marginBottom: 20 }}>
+              A Nossa<br />Empresa
+            </h1>
+            <p style={{ fontSize: 16, lineHeight: 1.72, color: "rgba(255,255,255,0.64)", maxWidth: "48ch" }}>
+              Especialistas em abrasivos cerâmicos e resinoide para a indústria da pedra natural e artificial, com foco em clareza técnica e apoio comercial direto.
             </p>
-            <div className="mt-7 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-[1.3rem] border border-[#ddcfbb] bg-white px-5 py-5 text-[15px] font-medium leading-7 text-steel-950 shadow-[0_10px_28px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.85)]">Formulações ajustadas ao cliente e ao contexto técnico.</div>
-              <div className="rounded-[1.3rem] border border-[#ddcfbb] bg-white px-5 py-5 text-[15px] font-medium leading-7 text-steel-950 shadow-[0_10px_28px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.85)]">Controlo de processo orientado para consistência competitiva.</div>
-              <div className="rounded-[1.3rem] border border-[#ddcfbb] bg-white px-5 py-5 text-[15px] font-medium leading-7 text-steel-950 shadow-[0_10px_28px_rgba(16,32,34,0.04),inset_0_1px_0_rgba(255,255,255,0.85)]">Forte relação preço/qualidade suportada por eficiência produtiva.</div>
-            </div>
           </div>
         </section>
 
-        <section className="container-shell pt-14 sm:pt-16 lg:pt-20 xl:pt-24">
-          <div className="mx-auto max-w-[1360px] rounded-[2.15rem] border border-white/12 surface-dark px-6 py-8 text-white shadow-[0_30px_104px_rgba(5,9,10,0.3)] sm:px-8 sm:py-10 lg:px-10 lg:py-11">
-            <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
-              <SectionIntro
-                eyebrow="Fase atual"
-                title="Uma nova etapa centrada em crescimento estruturado"
-                description="A Abrasivos NT encontra-se atualmente numa fase de expansão. Depois de vários anos dedicados ao desenvolvimento do processo produtivo e à consolidação técnica da operação, a empresa entra agora numa nova etapa focada em crescimento com base sólida."
-              />
-              <div className="grid gap-3 sm:grid-cols-2">
-                {expansionPoints.map((point) => (
-                  <div
-                    key={point}
-                    className="rounded-[1.35rem] border border-white/12 bg-white/[0.07] px-5 py-5 text-[15px] font-semibold leading-7 text-white/94 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
-                  >
-                    {point}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* CONTENT */}
+        <div className="container-shell" style={{ paddingTop: 64, paddingBottom: 80 }}>
 
-        <section className="container-shell pt-14 sm:pt-16 lg:pt-20 xl:pt-24">
-          <div className="mx-auto max-w-[1280px]">
-            <SectionIntro title="O que orienta a nossa atuação" />
-            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {principles.map((item) => (
-                <article
-                  key={item.title}
-                  className="flex h-full rounded-[1.65rem] border border-[#dfd3c2] bg-white px-6 py-6 shadow-[0_12px_30px_rgba(16,32,34,0.045),inset_0_1px_0_rgba(255,255,255,0.9)]"
-                >
-                  <div className="flex items-start gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-sand-500" />
-                    <div className="flex h-full flex-col">
-                      <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-sand-700">Princípio</p>
-                      <h3 className="mt-3 text-[1.4rem] font-semibold tracking-[-0.04em] text-steel-950">{item.title}</h3>
-                      <p className="mt-3 text-[16px] leading-8 text-steel-900/84">{item.text}</p>
-                    </div>
+          {/* About grid */}
+          <div className="empresa-grid-main">
+            <div className="why-card-dark">
+              <div className="section-kicker mb-3">Identidade</div>
+              <h2 style={{ fontFamily: "var(--font-barlow),sans-serif", fontSize: "clamp(2rem,4vw,3.2rem)", fontWeight: 800, textTransform: "uppercase", color: "#fff", marginTop: 12, lineHeight: 0.95 }}>
+                Abrasivos NT —{" "}
+                <em style={{ color: "var(--sand)", fontStyle: "normal" }}>Precisão<br />em cada processo.</em>
+              </h2>
+              <p style={{ marginTop: 20, fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)" }}>
+                {company.about}
+              </p>
+              <p style={{ marginTop: 14, fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)" }}>
+                {company.companyStatement}
+              </p>
+            </div>
+            <div className="empresa-grid-pillars">
+              {[
+                { icon: "🎯", name: "Especialização", desc: "Focados exclusivamente em abrasivos para pedra — não somos distribuidores generalistas." },
+                { icon: "🔬", name: "Formulações", desc: "Desenvolvimento de abrasivos adaptados a cada tipo de pedra, máquina e processo de acabamento." },
+                { icon: "🤝", name: "Apoio Direto", desc: "Contato comercial simples e objetivo, com resposta técnica personalizada para cada cliente." },
+                { icon: "📈", name: "Crescimento", desc: "Estrutura comercial preparada para crescimento do catálogo e expansão de mercados." },
+              ].map((p) => (
+                <div key={p.name} className="app-card" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                  <div className="app-icon">{p.icon}</div>
+                  <div>
+                    <div className="app-name" style={{ fontSize: "1.1rem" }}>{p.name}</div>
+                    <p className="app-desc">{p.desc}</p>
                   </div>
-                </article>
+                </div>
               ))}
             </div>
           </div>
-        </section>
 
-        <section className="container-shell pt-14 sm:pt-16 lg:pt-20 xl:pt-24">
-          <div className="mx-auto max-w-[1360px] rounded-[2.2rem] border border-[#d8cab3] bg-[linear-gradient(180deg,#fbf6ed_0%,#f1e8db_100%)] px-6 py-8 shadow-[0_26px_78px_rgba(16,32,34,0.08)] sm:px-8 sm:py-10 lg:px-10 lg:py-11">
-            <SectionIntro
-              eyebrow="Fecho institucional"
-              title="Uma empresa industrial com identidade própria e ambição internacional."
-              description="A Abrasivos NT combina experiência real, processo produtivo próprio e capacidade de adaptação para responder com consistência a mercados exigentes. O foco está em crescer com base sólida, visão industrial e proposta de valor competitiva."
-            />
+          {/* Mission */}
+          <div style={{ borderRadius: "var(--radius-xl)", background: "var(--cream-2)", border: "1px solid var(--border-light)", padding: "clamp(36px,5vw,64px)", marginBottom: 20 }}>
+            <div className="section-kicker mb-4">Missão</div>
+            <blockquote style={{ fontFamily: "var(--font-barlow),sans-serif", fontSize: "clamp(1.8rem,3.5vw,3rem)", fontWeight: 700, color: "var(--steel)", lineHeight: 1.05, textTransform: "uppercase", letterSpacing: "-0.01em", maxWidth: "28ch" }}>
+              Ajudar cada cliente a identificar o abrasivo mais adequado ao material, à máquina e ao resultado pretendido.
+            </blockquote>
           </div>
-        </section>
 
-        <section className="container-shell pt-14 sm:pt-16 lg:pt-20 xl:pt-24">
-          <div className="mx-auto max-w-[1360px] rounded-[2.25rem] border border-white/12 surface-dark px-6 py-8 text-white shadow-[0_34px_112px_rgba(5,9,10,0.32)] sm:px-8 sm:py-10 lg:px-10 lg:py-11">
-            <div className="grid gap-8 lg:grid-cols-[0.94fr_0.56fr] lg:items-end">
-              <div className="max-w-[760px]">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-sand-100">Contacto institucional</p>
-                <h2 className="mt-3 text-[2rem] font-semibold tracking-[-0.05em] text-white sm:text-[2.35rem] lg:text-[2.7rem] lg:leading-[0.98]">
-                  Procura um parceiro técnico e comercial com experiência, capacidade de adaptação e foco em qualidade competitiva?
-                </h2>
-                <p className="mt-4 max-w-[700px] text-[16px] leading-8 text-white/86 sm:text-[17px]">
-                  Estamos preparados para responder com soluções técnicas, apoio comercial direto e uma estrutura pensada para crescer com consistência.
-                </p>
+          {/* Audience + Contact */}
+          <div className="empresa-grid-bottom">
+            <div className="why-card-light">
+              <div className="section-kicker mb-3" style={{ color: "var(--steel-mid)", borderColor: "var(--border-light)", background: "rgba(16,32,34,0.04)" }}>
+                A quem nos dirigimos
               </div>
-              <div className="flex flex-col gap-3.5 sm:flex-row lg:flex-col xl:flex-row xl:justify-end">
-                <Link
-                  href="/produtos"
-                  className="inline-flex min-h-[54px] min-w-[220px] items-center justify-center rounded-full bg-sand-400 px-7 py-4 text-sm font-semibold text-steel-950 shadow-[0_18px_40px_rgba(201,154,81,0.24)] transition duration-200 hover:-translate-y-0.5 hover:bg-sand-300"
-                >
-                  Ver produtos
-                </Link>
-                <Link
-                  href="/orcamento"
-                  className="inline-flex min-h-[54px] min-w-[220px] items-center justify-center rounded-full border border-white/18 bg-white/[0.06] px-7 py-4 text-sm font-semibold text-white transition duration-200 hover:bg-white/[0.12]"
-                >
-                  Pedir orçamento
-                </Link>
+              <h3 style={{ fontFamily: "var(--font-barlow),sans-serif", fontSize: "1.8rem", fontWeight: 800, textTransform: "uppercase", color: "var(--steel)", marginTop: 12, marginBottom: 20 }}>
+                Público-alvo
+              </h3>
+              <div style={{ display: "grid", gap: 10 }}>
+                {[
+                  "Empresas de transformação de pedra",
+                  "Marmorarias",
+                  "Profissionais de acabamento e polimento",
+                  "Serviço exclusivo para Revendedores",
+                ].map((item) => (
+                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 16px", borderRadius: 14, background: "var(--cream-2)", border: "1px solid var(--border-light)" }}>
+                    <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--sand)", flexShrink: 0 }} />
+                    <span style={{ fontSize: 14, fontWeight: 500, color: "var(--steel)" }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="why-card-dark" style={{ justifyContent: "space-between" }}>
+              <div>
+                <div className="section-kicker mb-3">Localização</div>
+                <h3 style={{ fontFamily: "var(--font-barlow),sans-serif", fontSize: "1.8rem", fontWeight: 800, textTransform: "uppercase", color: "#fff", marginTop: 12, marginBottom: 8 }}>
+                  {contact.locationLabel},<br />{contact.locationValue}
+                </h3>
+                <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", marginBottom: 24 }}>{company.legalName}</p>
+                <div style={{ display: "grid", gap: 12 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(201,152,79,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#c9984f" strokeWidth={2} width={16} height={16}>
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                      </svg>
+                    </div>
+                    <a href={`mailto:${contact.email}`} style={{ fontSize: 14, color: "var(--sand-light)", fontWeight: 500 }}>{contact.email}</a>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(37,211,102,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <svg viewBox="0 0 24 24" fill="#25D366" width={16} height={16}>
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                      </svg>
+                    </div>
+                    <a href={`https://wa.me/${contact.whatsapp.replace(/\s/g, "")}`} style={{ fontSize: 14, color: "#fff", fontWeight: 500 }}>{contact.whatsapp}</a>
+                  </div>
+                </div>
+              </div>
+              <div style={{ marginTop: 32 }}>
+                <Link href="/orcamento" className="btn-primary">Pedir Orçamento</Link>
               </div>
             </div>
           </div>
-        </section>
+
+        </div>
       </main>
       <SiteFooter />
       <WhatsAppButton />
