@@ -1,6 +1,5 @@
 ﻿import Link from "next/link";
 import { CategoryGrid } from "@/components/category-grid";
-import { ContactForm } from "@/components/contact-form";
 import { ContentSection } from "@/components/content-section";
 import { QuoteCta } from "@/components/quote-cta";
 import { SiteFooter } from "@/components/site-footer";
@@ -140,9 +139,6 @@ export default function HomePage() {
           />
         </section>
 
-        <section className="container-shell pt-24 sm:pt-28">
-          <ContactForm />
-        </section>
       </main>
       <SiteFooter />
       <WhatsAppButton />
