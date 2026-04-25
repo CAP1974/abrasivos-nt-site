@@ -16,17 +16,17 @@ export default function HomePage() {
           <div className="absolute inset-0 grid-accent opacity-[0.08]" />
           <div className="absolute left-[-6%] top-[12%] h-[24rem] w-[24rem] rounded-full bg-sand-400/10 blur-3xl" />
           <div className="absolute right-[-8%] top-[-6%] h-[28rem] w-[28rem] rounded-full bg-sand-300/12 blur-3xl" />
-          <div className="container-shell relative flex min-h-[86vh] items-center py-8 sm:min-h-[88vh] lg:py-10 xl:min-h-[92vh]">
+          <div className="container-shell relative flex min-h-[72vh] items-center py-10 sm:min-h-[76vh] sm:py-12 lg:min-h-[80vh] lg:py-14 xl:min-h-[82vh]">
             <div className="w-full">
-              <div className="max-w-none">
-                <h1 className="max-w-[16ch] text-[2.9rem] font-semibold leading-[0.94] tracking-[-0.055em] sm:max-w-[13ch] sm:text-[4.2rem] lg:max-w-[11.5ch] lg:text-[6rem] lg:leading-[0.9] xl:max-w-[12.6ch] xl:text-[5.8rem]">
+              <div className="mx-auto max-w-[980px]">
+                <h1 className="max-w-[16ch] text-[2.9rem] font-semibold leading-[0.94] tracking-[-0.055em] sm:max-w-[13ch] sm:text-[4.2rem] lg:max-w-[11.5ch] lg:text-[5.6rem] lg:leading-[0.9] xl:max-w-[12.6ch] xl:text-[5.4rem]">
                   {company.heroTitle}
                 </h1>
-                <p className="mt-6 max-w-[60rem] text-[1.02rem] leading-8 text-white/78 sm:text-[1.08rem] lg:text-[1.16rem]">
+                <p className="mt-5 max-w-[42rem] text-[1rem] leading-8 text-white/78 sm:text-[1.08rem] lg:text-[1.12rem]">
                   {company.heroDescription}
                 </p>
 
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <div className="mt-7 flex flex-col gap-4 sm:flex-row">
                   <Link href="/produtos" className="inline-flex min-w-[230px] justify-center rounded-full bg-sand-400 px-7 py-4 text-sm font-semibold text-steel-950 shadow-[0_18px_40px_rgba(201,154,81,0.24)] transition duration-200 hover:-translate-y-0.5 hover:bg-sand-300">
                     {cta.primaryProducts}
                   </Link>
