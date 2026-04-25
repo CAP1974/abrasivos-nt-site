@@ -46,11 +46,8 @@ export default function OrcamentoPage() {
 
             <div className="mt-7 xl:mt-0 xl:self-stretch">
               <div className="h-full rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top,rgba(201,154,81,0.1),transparent_24%),linear-gradient(155deg,rgba(7,16,18,0.98)_0%,rgba(13,23,24,0.97)_34%,rgba(20,35,37,0.96)_100%)] px-5 py-5 text-white shadow-[0_28px_72px_rgba(5,9,10,0.24),inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-10px_24px_rgba(0,0,0,0.07)] sm:px-6 sm:py-6 lg:px-7 lg:py-7">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sand-100/86">Base estratégica</p>
-                <h2 className="mt-3.5 max-w-[15.5ch] text-[1.34rem] font-semibold tracking-[-0.04em] text-white sm:text-[1.45rem] lg:text-[1.56rem] lg:leading-[1.02]">
-                  Estrutura pensada para recolher contexto útil e acelerar a resposta comercial.
-                </h2>
-                <div className="mt-5 grid gap-2.5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sand-100/86">Base estratégica do orçamento</p>
+                <div className="mt-4 grid gap-2.5">
                   {heroItems.map((item) => (
                     <div
                       key={item}
@@ -60,12 +57,6 @@ export default function OrcamentoPage() {
                       <p className="text-[13px] font-medium leading-5.5 text-white/93 sm:text-[13.5px]">{item}</p>
                     </div>
                   ))}
-                </div>
-                <div className="mt-4.5 rounded-[1.28rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.055)_0%,rgba(255,255,255,0.03)_100%)] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.045)] sm:px-5 sm:py-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sand-100/92">Leitura comercial</p>
-                  <p className="mt-2.5 text-[13px] leading-6 text-white/84 sm:text-[13.5px]">
-                    A entrada comercial foi desenhada para ser clara, rápida e orientada por aplicação, material, máquina e necessidade técnica específica.
-                  </p>
                 </div>
               </div>
             </div>
