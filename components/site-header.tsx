@@ -46,17 +46,16 @@ export function SiteHeader() {
               className="hidden sm:inline-flex shrink-0 items-center justify-center rounded-full px-5 py-3 text-sm font-bold uppercase tracking-[0.06em] transition duration-200 hover:-translate-y-0.5"
               style={{
                 background: "var(--sand)", color: "var(--deep)",
-                boxShadow: "0 16px 36px rgba(201,152,79,0.26)",
-                letterSpacing: "0.06em"
+                boxShadow: "0 16px 36px rgba(201,152,79,0.26)"
               }}>
               {cta.primaryQuote}
             </Link>
             {/* Mobile hamburger */}
             <button className="xl:hidden flex flex-col gap-1.5 p-2 rounded-xl border border-white/10"
               onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-              <span className="block w-5 h-0.5 bg-white rounded-full transition-all" />
-              <span className="block w-5 h-0.5 bg-white rounded-full transition-all" />
-              <span className="block w-5 h-0.5 bg-white rounded-full transition-all" />
+              <span className="block w-5 h-0.5 bg-white rounded-full" />
+              <span className="block w-5 h-0.5 bg-white rounded-full" />
+              <span className="block w-5 h-0.5 bg-white rounded-full" />
             </button>
           </div>
         </div>
@@ -72,7 +71,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <Link href="/orcamento" onClick={() => setMobileOpen(false)}
-              className="mt-2 mx-0 text-center rounded-full py-3 text-sm font-bold uppercase tracking-[0.06em] transition"
+              className="mt-2 text-center rounded-full py-3 text-sm font-bold uppercase tracking-[0.06em] transition"
               style={{ background: "var(--sand)", color: "var(--deep)" }}>
               {cta.primaryQuote}
             </Link>
