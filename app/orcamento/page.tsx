@@ -5,6 +5,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { contact } from "@/content/site";
+export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 export default function OrcamentoPage() {
   return (
