@@ -46,7 +46,7 @@ export function SiteHeader() {
           </Link>
 
           {/* DESKTOP NAV — só visível xl+ */}
-          <nav className="xl:flex" style={{ display: "none", alignItems: "center", gap: 4 }}>
+           <nav className="hidden xl:flex" style={{ alignItems: "center", gap: 4 }}>
             {navigation.map((item) => (
               <Link
                 key={item.href}
