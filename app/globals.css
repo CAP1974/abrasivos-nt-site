@@ -318,4 +318,10 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 480px) {
   .empresa-grid-pillars { grid-template-columns: 1fr; }
+  header a {
+  color: #aaaaaa !important;
+}
+
+header nav a {
+  color: #aaaaaa !important;
 }
