@@ -303,9 +303,10 @@ export const contact = {
 };
 
 export const navigation = [
+  { label: "Home", href: "/" },
   { label: "Empresa", href: "/empresa" },
   { label: "Produtos", href: "/produtos" },
-  { label: "Contacto / Orçamento", href: "/orcamento" }
+  { label: "Contato", href: "/orcamento" }
 ] as const;
 
 
