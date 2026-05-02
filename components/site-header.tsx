@@ -10,150 +10,96 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 backdrop-blur-2xl"
-      style={{ background: "rgba(7,16,18,0.97)", boxShadow: "0 18px 46px rgba(4,8,9,0.32)" }}>
-      <div className="container-shell py-3.5 sm:py-4">
-        <div className="flex items-center justify-between gap-4">
+    <header style={{ position: "sticky", top: 0, zIndex: 50, borderBottom: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(20px)", background: "rgba(7,16,18,0.97)", boxShadow: "0 18px 46px rgba(4,8,9,0.32)" }}>
+      <div className="container-shell" style={{ paddingTop: 14, paddingBottom: 14 }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
 
-          <Link href="/" className="flex items-center gap-4 min-w-0">
-            <div className="flex h-12 w-[4.6rem] shrink-0 items-center justify-center rounded-[1.1rem] border border-white/10 bg-white/[0.04] px-2">
+          {/* LOGO */}
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 16, minWidth: 0 }}>
+            <div style={{ display: "flex", height: 48, width: 72, flexShrink: 0, alignItems: "center", justifyContent: "center", borderRadius: 18, border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.04)", padding: "0 8px" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/abrasivos-nt-logo.png" alt={`${company.brandName} logótipo`} className="h-8 w-auto sm:h-9" />
+              <img src="/abrasivos-nt-logo.png" alt={`${company.brandName} logótipo`} style={{ height: 32, width: "auto" }} />
             </div>
-            <div className="flex flex-col min-w-0">
-              <span className="truncate text-[13px] font-semibold uppercase tracking-[0.34em] sm:text-[15px]"
-                style={{ color: "#e2b96e", fontFamily: "var(--font-barlow), sans-serif" }}>
+            <div style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
+              <span style={{ fontSize: 13, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.34em", color: "#e2b96e", fontFamily: "var(--font-barlow), sans-serif", whiteSpace: "nowrap" }}>
                 {company.brandName}
               </span>
-              <span className="truncate text-[11px] sm:text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", whiteSpace: "nowrap" }}>
                 {company.legalName}
               </span>
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden items-center gap-1 xl:flex">
+          {/* DESKTOP NAV */}
+          <nav style={{ display: "none", alignItems: "center", gap: 4 }} className="xl:flex">
+            {navigation.map((item) => (
+              <Link key={item.href} href={item.href} style={{
+                fontSize: 13, fontWeight: 500,
+                letterSpacing: "0.1em", textTransform: "uppercase",
+                padding: "8px 16px", borderRadius: 9999,
+                color: pathname === item.href ? "#ffffff" : "#aaaaaa",
+                background: pathname === item.href ? "rgba(255,255,255,0.08)" : "transparent",
+                transition: "color .2s, background .2s",
+                whiteSpace: "nowrap",
+              }}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            {/* CTA button */}
+            <Link href="/orcamento" style={{
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
+              borderRadius: 9999, padding: "11px 22px",
+              fontSize: 13, fontWeight: 700,
+              textTransform: "uppercase", letterSpacing: "0.06em",
+              background: "#c9984f", color: "#071012",
+              boxShadow: "0 16px 36px rgba(201,152,79,0.26)",
+              whiteSpace: "nowrap",
+            }} className="hidden sm:inline-flex">
+              {cta.primaryQuote}
+            </Link>
+
+            {/* Hamburger */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Menu"
+              style={{ display: "flex", flexDirection: "column", gap: 5, padding: 8, borderRadius: 10, border: "1px solid rgba(255,255,255,0.1)", background: "transparent", cursor: "pointer" }}
+              className="xl:hidden"
+            >
+              <span style={{ display: "block", width: 22, height: 2, background: "#ffffff", borderRadius: 2 }} />
+              <span style={{ display: "block", width: 22, height: 2, background: "#ffffff", borderRadius: 2 }} />
+              <span style={{ display: "block", width: 22, height: 2, background: "#ffffff", borderRadius: 2 }} />
+            </button>
+          </div>
+        </div>
+
+        {/* MOBILE NAV */}
+        {mobileOpen && (
+          <div style={{ display: "flex", flexDirection: "column", borderTop: "1px solid rgba(255,255,255,0.1)", marginTop: 12, paddingTop: 12, paddingBottom: 8, gap: 4 }}>
             {navigation.map((item) => (
               <Link key={item.href} href={item.href}
+                onClick={() => setMobileOpen(false)}
                 style={{
-                  fontSize: 13, fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase",
-                  padding: "8px 16px", borderRadius: 9999,
-                  color: color: pathname === item.href ? "#ffffff" : "#cccccc",
-                  background: pathname === item.href ? "rgba(255,255,255,0.06)" : "transparent",
-                  transition: "color .2s, background .2s",
-                  display: "inline-block"
+                  display: "block", padding: "12px 16px", borderRadius: 10,
+                  fontSize: 14, fontWeight: 500,
+                  textTransform: "uppercase", letterSpacing: "0.08em",
+                  color: "#dddddd",
+                  borderBottom: "1px solid rgba(255,255,255,0.05)",
                 }}>
                 {item.label}
               </Link>
             ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
             <Link href="/orcamento"
-              className="hidden sm:inline-flex shrink-0 items-center justify-center rounded-full px-5 py-3 text-sm font-bold uppercase transition duration-200 hover:-translate-y-0.5"
+              onClick={() => setMobileOpen(false)}
               style={{
-                background: "var(--sand)", color: "var(--deep)",
-                letterSpacing: "0.06em",
-                boxShadow: "0 16px 36px rgba(201,152,79,0.26)"
+                display: "block", textAlign: "center",
+                marginTop: 8, padding: "12px 16px", borderRadius: 9999,
+                fontSize: 13, fontWeight: 700,
+                textTransform: "uppercase", letterSpacing: "0.06em",
+                background: "#c9984f", color: "#071012",
               }}>
-              {cta.primaryQuote}
-            </Link>
-            <button className="xl:hidden flex flex-col gap-1.5 p-2 rounded-xl border border-white/10"
-              onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-              <span className="block w-5 h-0.5 bg-white rounded-full" />
-              <span className="block w-5 h-0.5 bg-white rounded-full" />
-              <span className="block w-5 h-0.5 bg-white rounded-full" />
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile nav */}
-        {mobileOpen && (
-          <div className="xl:hidden mt-3 flex flex-col border-t border-white/10 pt-3 pb-2 gap-1">
-            {navigation.map((item) => (
-              <Link key={item.href} href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="px-4 py-3 rounded-xl text-sm font-medium uppercase tracking-[0.1em] transition"
-                style={{ color: "rgba(255,255,255,0.78)", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
-                {item.label}
-              </Link>
-            ))}
-            <Link href="/orcamento" onClick={() => setMobileOpen(false)}
-              className="mt-2 text-center rounded-full py-3 text-sm font-bold uppercase"
-              style={{ background: "var(--sand)", color: "var(--deep)", letterSpacing: "0.06em" }}>
-              {cta.primaryQuote}
-            </Link>
-          </div>
-        )}
-      </div>
-    </header>
-  );
-}
-
-  return (
-    <header className="sticky top-0 z-50 border-b border-white/10 backdrop-blur-2xl"
-      style={{ background: "rgba(7,16,18,0.97)", boxShadow: "0 18px 46px rgba(4,8,9,0.32)" }}>
-      <div className="container-shell py-3.5 sm:py-4">
-        {/* Main row */}
-        <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-4 min-w-0">
-            <div className="flex h-12 w-[4.6rem] shrink-0 items-center justify-center rounded-[1.1rem] border border-white/10 bg-white/[0.04] px-2"
-              style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/abrasivos-nt-logo.png" alt={`${company.brandName} logótipo`} className="h-8 w-auto sm:h-9" />
-            </div>
-            <div className="flex flex-col min-w-0">
-              <span className="truncate text-[13px] font-semibold uppercase tracking-[0.34em] sm:text-[15px]"
-                style={{ color: "#e2b96e", fontFamily: "var(--font-barlow), sans-serif" }}>
-                {company.brandName}
-              </span>
-              <span className="truncate text-[11px] text-white/56 sm:text-xs">{company.legalName}</span>
-            </div>
-          </Link>
-
-          {/* Desktop nav */}
-          <nav className="hidden items-center gap-1 xl:flex"
-            style={{ fontSize: "13px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase" }}>
-            {navigation.map((item) => (
-              <Link key={item.href} href={item.href}
-                className={`px-4 py-2 rounded-full transition duration-200 ${pathname === item.href ? "text-white bg-white/[0.06]" : "text-white/68 hover:text-white hover:bg-white/[0.05]"}`}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Link href="/orcamento"
-              className="hidden sm:inline-flex shrink-0 items-center justify-center rounded-full px-5 py-3 text-sm font-bold uppercase tracking-[0.06em] transition duration-200 hover:-translate-y-0.5"
-              style={{
-                background: "var(--sand)", color: "var(--deep)",
-                boxShadow: "0 16px 36px rgba(201,152,79,0.26)"
-              }}>
-              {cta.primaryQuote}
-            </Link>
-            {/* Mobile hamburger */}
-            <button className="xl:hidden flex flex-col gap-1.5 p-2 rounded-xl border border-white/10"
-              onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-              <span className="block w-5 h-0.5 bg-white rounded-full" />
-              <span className="block w-5 h-0.5 bg-white rounded-full" />
-              <span className="block w-5 h-0.5 bg-white rounded-full" />
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile nav */}
-        {mobileOpen && (
-          <div className="xl:hidden mt-3 flex flex-col border-t border-white/10 pt-3 pb-1 gap-1">
-            {navigation.map((item) => (
-              <Link key={item.href} href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="px-4 py-3 rounded-xl text-sm font-medium uppercase tracking-[0.1em] text-white/78 border-b border-white/[0.04] hover:text-white hover:bg-white/[0.04] transition">
-                {item.label}
-              </Link>
-            ))}
-            <Link href="/orcamento" onClick={() => setMobileOpen(false)}
-              className="mt-2 text-center rounded-full py-3 text-sm font-bold uppercase tracking-[0.06em] transition"
-              style={{ background: "var(--sand)", color: "var(--deep)" }}>
               {cta.primaryQuote}
             </Link>
           </div>
